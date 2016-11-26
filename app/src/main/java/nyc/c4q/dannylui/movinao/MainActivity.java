@@ -2,6 +2,7 @@ package nyc.c4q.dannylui.movinao;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -20,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tablayout;
     private ViewPager pager;
     private DrawerLayout drawerLayout;
-    private NavigationView nvDrawer;
     private ActionBarDrawerToggle drawerToggle;
+    private NavigationView nvDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerToggle = setupDrawerToggle();
         drawerLayout.addDrawerListener(drawerToggle);
+        nvDrawer = (NavigationView) findViewById(R.id.nvView);
+        setupDrawerContent(nvDrawer);
 
         //setup
         setupToolbar(toolbar);
@@ -42,6 +45,33 @@ public class MainActivity extends AppCompatActivity {
         setupViewPager(pager);
 
         tablayout.setupWithViewPager(pager);
+    }
+
+    private void setupDrawerContent(NavigationView nvDrawer) {
+        nvDrawer.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                selectDrawerItem(item);
+                return true;
+            }
+        });
+    }
+
+    private void selectDrawerItem(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_first:
+                System.out.println("NAV FIRST ITEM");
+                break;
+            case R.id.nav_second:
+                System.out.println("NAV SECOND ITEM");
+                break;
+            case R.id.nav_third:
+                System.out.println("NAV THIRD ITEM");
+                break;
+            case R.id.nav_settings:
+                System.out.println("SETTINGS");
+                break;
+        }
     }
 
     private void setupViewPager(ViewPager pager) {
