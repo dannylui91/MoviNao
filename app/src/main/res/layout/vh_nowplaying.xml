@@ -17,7 +17,7 @@
             android:id="@+id/image_nowplaying"
             android:layout_width="110dp"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
+            android:layout_marginRight="10dp"
             android:scaleType="fitXY"/>
 
         <TextView
@@ -25,7 +25,7 @@
             android:layout_toRightOf="@id/image_nowplaying"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:textStyle="bold"
             android:textSize="15sp"
             android:text="TITLE OF THIS MOVIE"/>
@@ -36,7 +36,7 @@
             android:layout_toRightOf="@id/image_nowplaying"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             android:text="R"/>
 
         <TextView
@@ -45,7 +45,7 @@
             android:layout_toRightOf="@id/image_nowplaying"
             android:layout_width="170dp"
             android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             android:scrollbars = "vertical"
             android:text="Overview"/>
 
@@ -54,8 +54,8 @@
             android:layout_toRightOf="@id/tv_nowplaying_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
             android:gravity="center"
             android:text="94"/>
 
